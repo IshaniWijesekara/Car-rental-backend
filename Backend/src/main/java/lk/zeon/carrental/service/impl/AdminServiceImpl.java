@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Ze on 10/31/2018.
@@ -37,8 +38,11 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public AdminDto getAdminDetail(String password) {
-        return null;
+    public AdminDto getAdminDetail(int adminId) {
+        Admin admin = adminRepository.findById(adminId).get();
+        AdminDto adminDto = new AdminDto(admin.getAdminId() , admin.getAddress(),admin.getFullName() , admin.getMobile() , admin.getPassword() , admin.getUserName());
+        return adminDto;
+
     }
 
     @Override
@@ -48,7 +52,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public ArrayList<AdminDto> getAdmins() {
-       ArrayList<Admin> getAll = adminRepository.getAllAdmin();
+       List<Admin> getAll = adminRepository.findAll();
        ArrayList<AdminDto>getAllAdmin = new ArrayList<>();
         for (Admin admin:getAll)
 
@@ -60,7 +64,13 @@ public class AdminServiceImpl implements AdminService {
             adminDto.setMobile(admin.getMobile());
             adminDto.setPassword(admin.getPassword());
             adminDto.setUserName(admin.getUserName());
+            getAllAdmin.add(adminDto);
         }
         return getAllAdmin;
+    }
+
+    @Override
+    public long getTotalCustomers() {
+        return adminRepository.getTotalCustomers();
     }
 }

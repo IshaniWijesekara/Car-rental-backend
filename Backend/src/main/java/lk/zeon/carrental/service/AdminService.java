@@ -10,9 +10,10 @@ import java.util.ArrayList;
  */
 public interface AdminService {
     public boolean addNewAdmin(AdminDto admin);
-    public AdminDto getAdminDetail(String password);
+    public AdminDto getAdminDetail(int adminId);
     public AdminDto updateAdminDetail(AdminDto adminDto);
     public ArrayList<AdminDto> getAdmins();
+    public long getTotalCustomers();
 
 
 }

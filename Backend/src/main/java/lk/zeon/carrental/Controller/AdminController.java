@@ -27,8 +27,14 @@ public class AdminController {
 
     }
 
-    @GetMapping(value = "/{adminId}", produces =  MediaType.APPLICATION_JSON_VALUE)
-    public ArrayList<AdminDto>getAdmin(@PathVariable("adminId") String adminId){
+    @GetMapping(produces =  MediaType.APPLICATION_JSON_VALUE)
+    public ArrayList<AdminDto>getAdmin(){
+        System.out.println("getAll");
         return adminService.getAdmins();
+    }
+
+    @GetMapping(value = "/{adminId}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public AdminDto getAdminByName(@PathVariable("adminId") Integer adminId ){
+        return adminService.getAdminDetail(adminId);
     }
 }
