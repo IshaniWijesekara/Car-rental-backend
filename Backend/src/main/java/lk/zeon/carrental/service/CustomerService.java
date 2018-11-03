@@ -8,7 +8,7 @@ import lk.zeon.carrental.entity.Customer;
  */
 public interface CustomerService {
     public boolean addCustomerDetail(CustomerDto customerDto);
-    public boolean deleteCustomerDetail(CustomerDto customerDto);
+    public boolean deleteCustomerDetail(int cid);
     public  CustomerDto updateCustomerDetail(CustomerDto  customerDto);
     public CustomerDto searchCustomerByIDNo(String idNo);
 

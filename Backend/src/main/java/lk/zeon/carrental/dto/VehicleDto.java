@@ -7,41 +7,41 @@ public class VehicleDto {
 
     private int vehicleId;
 
-    private String brnad;
+    private String brand;
     private String type;
     private String model;
     private String plateNumber;
     private int seatQuantity;
     private String fuelType;
-    private String condition;
+    private String conditions;
     private Double dailyPrice;
 
 
     public VehicleDto() {
     }
 
-    public VehicleDto( String brnad, String type, String model, String plateNumber, int seatQuantity, String fuelType, String condition, Double dailyPrice) {
+    public VehicleDto( String brand, String type, String model, String plateNumber, int seatQuantity, String fuelType, String conditions, Double dailyPrice) {
 
-        this.brnad = brnad;
+        this.brand = brand;
         this.type = type;
         this.model = model;
         this.plateNumber = plateNumber;
         this.seatQuantity = seatQuantity;
         this.fuelType = fuelType;
-        this.condition = condition;
+        this.conditions = conditions;
         this.dailyPrice = dailyPrice;
     }
 
 
-    public VehicleDto(int vehicleId, String brnad, String type, String model, String plateNumber, int seatQuantity, String fuelType, String condition, Double dailyPrice) {
+    public VehicleDto(int vehicleId, String brand, String type, String model, String plateNumber, int seatQuantity, String fuelType, String conditions, Double dailyPrice) {
         this.vehicleId = vehicleId;
-        this.brnad = brnad;
+        this.brand = brand;
         this.type = type;
         this.model = model;
         this.plateNumber = plateNumber;
         this.seatQuantity = seatQuantity;
         this.fuelType = fuelType;
-        this.condition = condition;
+        this.conditions = conditions;
         this.dailyPrice = dailyPrice;
     }
 
@@ -53,12 +53,12 @@ public class VehicleDto {
         this.vehicleId = vehicleId;
     }
 
-    public String getBrnad() {
-        return brnad;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setBrnad(String brnad) {
-        this.brnad = brnad;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public String getType() {
@@ -101,12 +101,12 @@ public class VehicleDto {
         this.fuelType = fuelType;
     }
 
-    public String getCondition() {
-        return condition;
+    public String getConditions() {
+        return conditions;
     }
 
-    public void setCondition(String condition) {
-        this.condition = condition;
+    public void setConditions(String conditions) {
+        this.conditions = conditions;
     }
 
     public Double getDailyPrice() {
@@ -121,13 +121,13 @@ public class VehicleDto {
     public String toString() {
         return "VehicleDto{" +
                 "vehicleId=" + vehicleId +
-                ", brnad='" + brnad + '\'' +
+                ", brand='" + brand + '\'' +
                 ", type='" + type + '\'' +
                 ", model='" + model + '\'' +
                 ", plateNumber='" + plateNumber + '\'' +
                 ", seatQuantity=" + seatQuantity +
                 ", fuelType='" + fuelType + '\'' +
-                ", condition='" + condition + '\'' +
+                ", conditions='" + conditions + '\'' +
                 ", dailyPrice=" + dailyPrice +
                 '}';
     }
